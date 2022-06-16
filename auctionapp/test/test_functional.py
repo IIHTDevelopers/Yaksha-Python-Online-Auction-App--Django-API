@@ -2,43 +2,43 @@ from rest_framework.test import APITestCase
 from auctionapp.models import SellerModel,ProductModel,CustomerModel,BidsModel
 from auctionapp.test.TestUtils import TestUtils
 class OnlineAuctionAPIFunctionalTest(APITestCase):
-    # @classmethod
-    # def setUpTestData(cls):
-    #     SellerModel.objects.create(
-    #     seller_name= "Seller1",
-    #     seller_phone_number= 9485843958,
-    #     seller_email_id= "Seller1@gmail.com",
-    #     seller_address= "Vizag")
-    #
-    #     ProductModel.objects.create(
-    #     product_id=1,
-    #     seller_id=1,
-    #     product_name= "Samsung",
-    #     product_description="Samsung is a mobile",
-    #     product_price=25000.00,
-    #     product_quantity=1,
-    #     product_start_bidding_amount=30000.00,
-    #     product_last_date_of_bidding='2022-06-05',
-    #     product_category="Mobiles"
-    #     )
-    #
-    #     CustomerModel.objects.create(
-    #     customer_id=2,
-    #     customer_user_name= "Customer2",
-    #     customer_password= "venu123",
-    #     customer_phone_number= 9951849555,
-    #     customer_email_id= "customer2@gmail.com",
-    #     customer_address= "Tirupathi")
-    #
-    #     BidsModel.objects.create(
-    #     bid_id= 1,
-    #     bid_amount="32000.00",
-    #     bidding_date='2022-06-01',
-    #     product_id= 1,
-    #     customer_id= 2
-    #     )
-    #     with open("../output_revised.txt","w") as f:
-    #         pass
+    @classmethod
+    def setUpTestData(cls):
+        SellerModel.objects.create(
+        seller_name= "Seller1",
+        seller_phone_number= 9485843958,
+        seller_email_id= "Seller1@gmail.com",
+        seller_address= "Vizag")
+    
+        ProductModel.objects.create(
+        product_id=1,
+        seller_id=1,
+        product_name= "Samsung",
+        product_description="Samsung is a mobile",
+        product_price=25000.00,
+        product_quantity=1,
+        product_start_bidding_amount=30000.00,
+        product_last_date_of_bidding='2022-06-05',
+        product_category="Mobiles"
+        )
+    
+        CustomerModel.objects.create(
+        customer_id=2,
+        customer_user_name= "Customer2",
+        customer_password= "venu123",
+        customer_phone_number= 9951849555,
+        customer_email_id= "customer2@gmail.com",
+        customer_address= "Tirupathi")
+    
+        BidsModel.objects.create(
+        bid_id= 1,
+        bid_amount="32000.00",
+        bidding_date='2022-06-01',
+        product_id= 1,
+        customer_id= 2
+        )
+        with open("../output_revised.txt","w") as f:
+            pass
 
     def test_post_request_for_seller(self):
         test_obj = TestUtils()
